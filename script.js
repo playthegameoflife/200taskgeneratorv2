@@ -1975,7 +1975,7 @@ const taskDifficulties = {
   99: "Prioritize self-care and make time for activities that promote relaxation, such as taking a bath, reading a book, or practicing meditation.",
   100: "Remember that weight loss is a journey, and it's important to be patient and kind to yourself along the way.",
 },
-   loseweight: {
+   crossfit: {
   1: "Complete 21-15-9 reps for time of dumbbell thrusters (squat to overhead press).",
   2: "AMRAP (As Many Rounds As Possible) in 15 minutes: 10 Dumbbell Renegade Rows (alternating arms), 15 Dumbbell Goblet Squats, 20 Sit-ups.",
   3: "5 Rounds for Time: 10 Dumbbell Snatches (5 per arm), 15 Push-ups, 20 Air Squats.",
