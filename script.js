@@ -3501,6 +3501,11 @@ function generateRandomTask(stat) {
   const taskLevelElement = document.getElementById(`${stat}-tasks`);
   const taskDescriptionElement = document.getElementById(`${stat}-task`);
 
+  if (!taskDifficulties[stat]) {
+    console.error(`Category "${stat}" not found in taskDifficulties`);
+    return;
+  }
+
   const currentLevel = parseInt(taskLevelElement.textContent.replace('Tasks: ', ''));
   const nextLevel = currentLevel + 1;
 
@@ -3510,6 +3515,12 @@ function generateRandomTask(stat) {
 
   taskLevelElement.textContent = `Tasks: ${nextLevel}`;
   taskDescriptionElement.textContent = `Task: ${randomTask}`;
+}
+
+// Function called by onclick attributes in HTML
+function generateTask(stat) {
+  saveProgress(stat);
+  generateRandomTask(stat);
 }
 
 // Function to save progress to local storage
@@ -3528,6 +3539,11 @@ function saveProgress(stat) {
 function retrieveProgress(stat) {
   const taskLevelElement = document.getElementById(`${stat}-tasks`);
   const taskDescriptionElement = document.getElementById(`${stat}-task`);
+
+  if (!taskDifficulties[stat]) {
+    console.error(`Category "${stat}" not found in taskDifficulties`);
+    return;
+  }
 
   const storedLevel = localStorage.getItem(`${stat}-level`);
   const storedTask = localStorage.getItem(`${stat}-task`);
